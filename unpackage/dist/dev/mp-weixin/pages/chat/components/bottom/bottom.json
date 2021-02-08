@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "morechoise": "/pages/chat/components/morechoise/morechoise"
+  }
+}

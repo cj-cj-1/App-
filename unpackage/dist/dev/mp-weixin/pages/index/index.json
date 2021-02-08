@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top": "/pages/index/components/top/top",
+    "friendlist": "/pages/index/components/frendlist/frendlist"
+  }
+}

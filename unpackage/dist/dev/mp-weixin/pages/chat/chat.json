@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top": "/pages/chat/components/top/top",
+    "message": "/pages/chat/components/message/message",
+    "bottom": "/pages/chat/components/bottom/bottom"
+  }
+}

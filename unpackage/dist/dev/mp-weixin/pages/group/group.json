@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top": "/components/top/top",
+    "userlist": "/pages/group/components/userlist/userlist"
+  }
+}

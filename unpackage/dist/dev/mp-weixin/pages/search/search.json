@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "search-bar": "/pages/search/components/search-bar/search-bar",
+    "search-friend": "/pages/search/components/search-friend/search-friend"
+  }
+}

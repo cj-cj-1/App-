@@ -1,0 +1,1 @@
+<view class="top data-v-bd67cea0"><image src="/static/image/return.png" mode data-event-opts="{{[['tap',[['returnClickHandler',['$event']]]]]}}" bindtap="__e" class="data-v-bd67cea0"></image><view class="title data-v-bd67cea0">{{''+title+''}}</view></view>
