@@ -5,7 +5,7 @@
 				<image src="/static/image/voice.png" mode="" :class="{hide: voice}"></image>
 				<image src="/static/image/keyboard.png" mode="" :class="{hide: !voice}"></image>
 			</view>
-			<textarea type="text" v-model="textContent" :class="{hide: voice}" :adjust-position="false" auto-height="true" maxlength="-1" @input="inputHandler" @focus="textFoucsHandler" @keyboardheightchange="keyboardheightchange" />
+			<textarea type="text" v-model="textContent" :class="{hide: voice}" :adjust-position="false" auto-height="true" maxlength="-1" @input="inputHandler" @focus="textFoucsHandler" @keyboardheightchange="keyboardheightchange" @blur="blurHandler"/>
 			<text :class="{speak: true,hide: !voice}"  @touchstart="voiceClickHandler" @touchend="voiceEndHandler" @touchmove="voiceMoveHandler">按住说话</text>
 			<image src="/static/image/emoji.png" mode="" class="emoji" @click="emojiClickHandler" ></image>
 			<image src="/static/image/morechange.png" mode="" @click="fileClickHandler" :class="{hide: !send}"></image>
@@ -105,10 +105,10 @@
 				// console.log(this.keyboardheight,this.height,this.height+this.keyboardheight)
 				this.$emit("getBottomHeight", this.height+this.keyboardheight)
 			},
-			// blurHandler(){
-			// 	this.keyboardheight = 0
-			// 	this.$emit("getBottomHeight", this.height+this.keyboardheight)
-			// },
+			blurHandler(){
+				this.keyboardheight = 0
+				this.$emit("getBottomHeight", this.height)
+			},
 			//判断高度，如果高度变化，需要发送给父组件
 			inputHandler(){
 				if(this.textContent != ''){

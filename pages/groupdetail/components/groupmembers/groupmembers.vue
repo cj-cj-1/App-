@@ -61,7 +61,7 @@
 					url:"/group/get-member",
 					data:{userid, groupid}
 				})
-				console.log(result)
+				// console.log(result)
 				if(result.data.status == 200){
 					this.groupmembers = result.data.result
 				}
@@ -99,7 +99,7 @@
 				})
 			},
 			inviteHandler(){
-				console.log("888888")
+				// console.log("888888")
 				this.$emit("inviteHandler")
 			}
 		},

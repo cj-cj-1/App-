@@ -177,7 +177,7 @@
 								if(status === 200){
 									uni.setStorageSync("token_id",JSON.stringify({token, userid }))
 									
-									await uni.navigateTo({
+									await uni.switchTab({
 										url: "/pages/index/index?userid="+this.userInfo.res.userid 
 									})
 								}else if(status === 500){

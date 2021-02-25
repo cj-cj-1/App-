@@ -1930,8 +1930,9 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myUploadFile = exports.myHttp = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} // 全局请求路径，也就是后端的请求基准路径
-var BASE_URL = 'http://192.168.1.102:3001';
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myUploadFile = exports.myHttp = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 12));
+var _commom = __webpack_require__(/*! @/util/js/commom.js */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var BASE_URL = _commom.socketSeverUrl;
 // const BASE_URL = 'http://192.168.43.207:3001'
 // 同时发送异步代码的次数，防止一次点击中有多次请求，用于处理
 // let ajaxTimes=0;
@@ -2821,6 +2822,18 @@ if (hadRuntime) {
 /***/ }),
 
 /***/ 15:
+/*!**************************************!*\
+  !*** D:/毕业设计/chat/util/js/commom.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.socketSeverUrl = void 0;var socketSeverUrl = 'http://192.168.1.102:3002';exports.socketSeverUrl = socketSeverUrl;
+
+/***/ }),
+
+/***/ 16:
 /*!***********************************************!*\
   !*** D:/毕业设计/chat/util/js/weapp.socket.io.js ***!
   \***********************************************/
@@ -2840,7 +2853,7 @@ function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Obj
 
 /***/ }),
 
-/***/ 161:
+/***/ 162:
 /*!*************************************!*\
   !*** D:/毕业设计/chat/util/js/emoji.js ***!
   \*************************************/
@@ -2867,7 +2880,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.emojiArr =
 
 /***/ }),
 
-/***/ 162:
+/***/ 163:
 /*!************************************!*\
   !*** D:/毕业设计/chat/util/js/uuid.js ***!
   \************************************/
@@ -8935,7 +8948,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 22:
+/***/ 23:
 /*!*****************************************!*\
   !*** D:/毕业设计/chat/util/js/getUserid.js ***!
   \*****************************************/
@@ -8989,7 +9002,18 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 39:
+/***/ 4:
+/*!*******************************!*\
+  !*** D:/毕业设计/chat/pages.json ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 40:
 /*!****************************************!*\
   !*** D:/毕业设计/chat/util/js/debounce.js ***!
   \****************************************/
@@ -9011,18 +9035,7 @@ function debounce(func, delay) {
 
 /***/ }),
 
-/***/ 4:
-/*!*******************************!*\
-  !*** D:/毕业设计/chat/pages.json ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 56:
+/***/ 57:
 /*!**************************************!*\
   !*** D:/毕业设计/chat/util/js/format.js ***!
   \**************************************/
@@ -9030,7 +9043,8 @@ function debounce(func, delay) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.formatDate = formatDate;exports.getImageUrl = getImageUrl;exports.getRecordUrl = getRecordUrl;exports.formatTime = formatTime;exports.getChatTime = getChatTime;function formatDate(time) {
+Object.defineProperty(exports, "__esModule", { value: true });exports.formatDate = formatDate;exports.getImageUrl = getImageUrl;exports.getRecordUrl = getRecordUrl;exports.formatTime = formatTime;exports.getChatTime = getChatTime;var _commom = __webpack_require__(/*! @/util/js/commom.js */ 15);
+function formatDate(time) {
   var nowDate = new Date();
   var year = time.getFullYear();
   var nowYear = nowDate.getFullYear();
@@ -9075,14 +9089,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.formatDate
 //获得图片地址
 function getImageUrl(url) {
   // return "http://localhost:3001/user/" + url
-  return "http://192.168.1.102:3001" + url;
+  return _commom.socketSeverUrl + url;
   // return "http://192.168.43.207:3001" + url
 }
 
 //获得录音地址
 function getRecordUrl(url) {
   // return "http://localhost:3001/user/" + url
-  return "http://192.168.1.102:3001" + url;
+  return _commom.socketSeverUrl + url;
   // return "http://192.168.43.207:3001" + url
 }
 

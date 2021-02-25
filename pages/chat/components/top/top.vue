@@ -69,6 +69,9 @@
 				}
 				
 			}
+		},
+		mounted() {
+			console.log(this.friendname)
 		}
 	}
 </script>

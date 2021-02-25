@@ -1,3 +1,4 @@
+import {socketSeverUrl} from '@/util/js/commom.js'
 export function formatDate(time){
 	let nowDate = new Date()
 	let year = time.getFullYear();
@@ -43,14 +44,14 @@ export function formatDate(time){
 //获得图片地址
 export function getImageUrl(url){
 	// return "http://localhost:3001/user/" + url
-	return "http://192.168.1.102:3001" + url
+	return socketSeverUrl + url
 	// return "http://192.168.43.207:3001" + url
 }
 
 //获得录音地址
 export function getRecordUrl(url){
 	// return "http://localhost:3001/user/" + url
-	return "http://192.168.1.102:3001" + url
+	return socketSeverUrl + url
 	// return "http://192.168.43.207:3001" + url
 }
 

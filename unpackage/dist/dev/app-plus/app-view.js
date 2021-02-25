@@ -4378,6 +4378,9 @@ var render = function() {
               },
               keyboardheightchange: function($event) {
                 return _vm.$handleViewEvent($event)
+              },
+              blur: function($event) {
+                return _vm.$handleViewEvent($event)
               }
             },
             model: {

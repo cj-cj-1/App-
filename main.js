@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import App from './App'
 import {myHttp, myUploadFile} from './request/index.js'
+import {socketSeverUrl} from './util/js/commom.js'
 import io from '@/util/js/weapp.socket.io.js'
 
-let serverUrl = 'http://192.168.1.102:3002'
+let serverUrl = socketSeverUrl
 Vue.config.productionTip = false
 Vue.prototype.$myHttp = myHttp
 Vue.prototype.$myUploadFile = myUploadFile

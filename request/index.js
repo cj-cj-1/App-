@@ -1,5 +1,6 @@
 // 全局请求路径，也就是后端的请求基准路径
-const BASE_URL = 'http://192.168.1.102:3001'
+import {socketSeverUrl} from '@/util/js/commom.js'
+const BASE_URL = socketSeverUrl
 // const BASE_URL = 'http://192.168.43.207:3001'
 // 同时发送异步代码的次数，防止一次点击中有多次请求，用于处理
 // let ajaxTimes=0;

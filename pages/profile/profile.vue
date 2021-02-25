@@ -84,6 +84,7 @@
 	import io from '@/util/js/weapp.socket.io.js'
 	import getUserid from '@/util/js/getUserid.js'
 	import {getImageUrl, formatTime} from '@/util/js/format.js'
+	import {socketSeverUrl} from '@/util/js/commom.js'
 	//引入裁剪图片的插件
 	import ImageCropper from "@/components/ling-imgcropper/ling-imgcropper.vue";
 	//引入模态框子组件
@@ -179,7 +180,6 @@
 				//选择性别时
 				bindPickerChange: async function(e) {
 					let userid = this.userid
-					// console.log('picker发送选择改变，携带值为', e.target.value)
 					this.index = e.target.value
 					let index= this.index 
 					let result = await this.$myHttp({
@@ -282,7 +282,7 @@
 								// that.socket.emit("logout",that.userid)
 								if(that.socket){
 									that.socket.close()
-									Vue.prototype.socket = io('http://192.168.1.102:3002',{
+									Vue.prototype.socket = io(socketSeverUrl,{
 										transports: ['websocket'], // 此项必须设置
 										reconnectionAttempts: 3, // 失败后重新连接次数，一直失败总共尝试四次
 										reconnectionDelay: 2000, // 重新连接间隔时间毫秒

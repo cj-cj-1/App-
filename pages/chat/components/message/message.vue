@@ -151,7 +151,7 @@
 				let friendid = this.friendid
 				// console.log(userid, friendid)
 				let skipNum = this.skipNum
-				let pageSize = 11
+				let pageSize = 30
 				let result;
 				if(this.isgroup == 0){
 					result = await this.$myHttp({
@@ -196,7 +196,6 @@
 								data[i].content.name =getRecordUrl(data[i].content.name)
 								let name = data[i].content.name
 								recordPlay[name] = true
-								console.log(recordPlay)
 								this.recordArr.unshift(name)
 							}else if(data[i].type == 3){
 								data[i].content = JSON.parse(data[i].content)
@@ -223,7 +222,6 @@
 				this.socket.on('message', (message) => {
 					if((!message.groupid && (message.userid == this.friendid || message.userid == this.userid)) || message.groupid == this.groupid){
 						// console.log(message)
-						
 						//深拷贝对象，因为里面有日期对象，日期对象是引用对象
 						let newMessage = JSON.parse(JSON.stringify(message))
 						let tempTime = message.time
@@ -314,15 +312,10 @@
 			
 		},
 		created() {
-			//进来时就更新一下当前时间
-			// newTime = new Date()
 			//调用请求数据的函数
 			if(this.timer){
 				clearInterval(this.timer)
 			}
-			// console.log("this.scrollTo","hhh")
-			// this.getMessage()
-			// console.log(this.getTime(new Date("2020,11,20"), new Date("2020,11,19")))
 		},
 		mounted(){
 			

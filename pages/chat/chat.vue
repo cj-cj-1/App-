@@ -90,8 +90,6 @@
 			},
 			
 			changeScrollTo(num){
-				// console.log("12345")
-				// console.log(num)
 				//先把原先的scrollTo 清除，然后再重新设置scrollTo ,让他滚动到底部，
 				// 因为底部的数据在messageList里其实是第一条数据，所以就是取msg0
 				this.scrollTo = ''
@@ -105,7 +103,6 @@
 					this.$nextTick(function(){
 						this.scrollTo = 'msg0'
 					})
-					// console.log(this.scrollTo, "oooo")
 				}
 			},
 			recordLengthHandler(len){
@@ -123,13 +120,14 @@
 			
 		},
 		onLoad(option) {
-			console.log("option")
+			console.log(option)
 			//isgroup为0表示是好友
 			this.isgroup = option.isgroup
 			if(option.isgroup == 0){
 				this.friendid = option.friendid
 				this.imgurl = option.imgurl
 				this.friendname = option.username 
+				console.log(this.friendname)
 			}else{
 				this.groupid = option.groupid
 				this.groupname = option.groupname

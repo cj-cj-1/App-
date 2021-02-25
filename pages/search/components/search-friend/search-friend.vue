@@ -115,7 +115,6 @@
 					if(tempIndex !== undefined){
 						TempFriendList.splice(tempIndex, 1)
 					}
-					
 					this.friendList = TempFriendList
 					// console.log(this.friendList)
 				}

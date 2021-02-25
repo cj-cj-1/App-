@@ -38,7 +38,7 @@
 		},
 		methods: {
 			async clickHandle(obj){
-				// console.log(obj)
+				console.log(obj)
 				let userid = this.userid
 				let username = obj.markname || obj.username
 				let groupname = obj.groupname
@@ -68,7 +68,6 @@
 						}
 					})
 					if(result.data.status === 200){
-
 						uni.navigateTo({
 							url:'/pages/chat/chat?friendid='+ obj.friendid +'&imgurl=' + obj.imgurl + '&username='+ username + '&isgroup=' + obj.isgroup	
 						})
@@ -199,13 +198,11 @@
 					// 这里不直接重新调用获取用户好友的函数是为了尽量少的访问后端
 					// 减轻服务器的压力
 					let index;
-					console.log(this.List)
 					for(let i = 0;i < this.List.length;i++){
 						// 如果不是群，只有自己和好友会接收到消息，所以不用做很多的判断
 						// 如果不是群，则知道对应的好友，该好友(friendid)肯定会满足是message的userid或者是message的toid，如果是群，则找对应的群
-						if((!message.groupid && (this.List[i].friendid == message.userid || this.List[i].friendid == message.toid)) || this.List[i].id == message.groupid){
+						if((!message.groupid && (this.List[i].friendid == message.userid || this.List[i].friendid == message.toid)) || (message.groupid && this.List[i].id == message.groupid)){
 							index = i
-							// console.log(message.toid, message.)
 							break
 						}
 						
@@ -214,9 +211,10 @@
 						this.List[index].lastMsg = message.content
 						this.List[index].lasttime = message.time
 						this.List[index].type = message.type
-						this.List[index].username = message.username
 						this.List[index].unread = this.List[index].unread + 1
-
+						if(message.username){
+							this.List[index].username = message.username
+						}
 						// 修改后的最后一条消息放到最前面
 						let tempListItem = this.List.splice(index, 1)
 						// console.log("tempListItem",tempListItem)
@@ -253,7 +251,7 @@
 					}
 					if(userid == friendid){
 						// this.List = []
-						console.log("rrrrrrrr")
+						// console.log("rrrrrrrr")
 						this.getUserList()
 					}
 				})
